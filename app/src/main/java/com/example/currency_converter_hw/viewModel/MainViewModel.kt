@@ -17,9 +17,11 @@ class MainViewModel : ViewModel() , IViewModel{
     private val repository: IRespository = CurrencyConverterRespository()
 
     private var _convertCurrency = MutableLiveData<String>()
-    private var _currentCurrency = MutableLiveData<String>(" ")
+    private var _currentCurrency = MutableLiveData<String>("")
     var fromCurrency = MutableLiveData<String>("")
     var toCurrency = MutableLiveData<String>("")
+
+    var switchedValue = MutableLiveData<String>("")
 
     val convertCurrency : MutableLiveData<String>
         get() = _convertCurrency
@@ -34,7 +36,5 @@ class MainViewModel : ViewModel() , IViewModel{
                 .catch { e -> Log.i(TAG, "${e.message}") }
                 .collect { _convertCurrency.postValue(getCheckStatus(it)) }
         }
-
-
 
 }
