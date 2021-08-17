@@ -28,6 +28,7 @@ abstract class BaseActivity<VB : ViewBinding , VM : IViewModel > : AppCompatActi
         binding = DataBindingUtil.setContentView(this,getLayout())
 
         setup()
+        addCallbacks()
     }
 
     //basic function in this project
