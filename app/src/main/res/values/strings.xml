@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Currency_Converter_HW</string>
+
+    <string-array name="listCurrency">
+        <item>USD</item>
+        <item>IQD</item>
+    </string-array>
+</resources>
