@@ -21,8 +21,6 @@ class MainViewModel : ViewModel() , IViewModel{
     var fromCurrency = MutableLiveData<String>("")
     var toCurrency = MutableLiveData<String>("")
 
-    var switchedValue = MutableLiveData<String>("")
-
     val convertCurrency : MutableLiveData<String>
         get() = _convertCurrency
 
