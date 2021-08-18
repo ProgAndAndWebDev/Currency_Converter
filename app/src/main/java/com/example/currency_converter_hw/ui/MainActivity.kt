@@ -18,6 +18,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         binding!!.lifecycleOwner = this
 
         settingSpinner()
+
     }
 
     override fun addCallbacks() {
@@ -25,20 +26,17 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         binding!!.switchSpinner.setOnClickListener {
             switchSpinners(binding!!.spinnerFromCurrency , binding!!.spinnerToCurrency)
         }
+
     }
-    fun settingSpinner(){
+
+    private fun settingSpinner(){
         binding!!.spinnerFromCurrency.setSelection(1)
     }
 
     fun switchSpinners(from: Spinner , to: Spinner) {
         val switch = to.selectedItemPosition
-        to.setSelection(from.selectedItemPosition)
-        from.setSelection(switch)
+            to.setSelection(from.selectedItemPosition).also {  from.setSelection(switch) }
     }
 
 }
-
-
-
-
 

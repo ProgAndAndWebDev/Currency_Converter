@@ -5,4 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface IRespository {
     fun convertedCurrency(fromCurrency: String, toCurrency: String, amount: Double?): Flow<Status<String>>
+
+
 }

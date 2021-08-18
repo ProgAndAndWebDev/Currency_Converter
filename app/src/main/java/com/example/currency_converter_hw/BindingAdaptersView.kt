@@ -3,9 +3,9 @@ package com.example.currency_converter_hw
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
-import androidx.core.view.get
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
+
 
 @BindingAdapter("theCurrency")
 fun listenClicks(spinner: Spinner, theCurrency: MutableLiveData<String>) {
@@ -17,3 +17,5 @@ fun listenClicks(spinner: Spinner, theCurrency: MutableLiveData<String>) {
         }
     }
 }
+
+
