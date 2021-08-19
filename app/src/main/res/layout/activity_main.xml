@@ -5,6 +5,9 @@
 
     <data>
         <variable
+            name="view"
+            type="android.widget.TextView" />
+        <variable
             name="viewModel"
             type="com.example.currency_converter_hw.viewModel.MainViewModel" />
     </data>
@@ -22,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             android:text="Result"
+            android:textColor="#437A5D"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -50,16 +54,15 @@
             app:layout_constraintTop_toBottomOf="@+id/spinnerFromCurrency" />
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/convertedCurrency"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:background="@drawable/bg_edit_text"
             android:hint="Converted Amount"
             android:paddingHorizontal="15dp"
-            android:paddingVertical="13dp"
+            android:gravity="center_vertical"
             android:text="@{viewModel.convertCurrency.toString()}"
             android:textColor="#6C6C6C"
-            android:textSize="19dp"
+            android:textSize="22dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
@@ -119,6 +122,7 @@
             android:text="@={viewModel.currentCurrency}"
             android:textColor="#6C6C6C"
             android:textStyle="bold"
+            changeText="@{viewModel.convertCurrency}"
             app:layout_constraintEnd_toEndOf="@+id/spinnerToCurrency"
             app:layout_constraintStart_toStartOf="@+id/spinnerToCurrency"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />

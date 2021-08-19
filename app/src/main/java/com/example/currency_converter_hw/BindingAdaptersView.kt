@@ -2,7 +2,10 @@ package com.example.currency_converter_hw
 
 import android.view.View
 import android.widget.AdapterView
+import android.widget.EditText
 import android.widget.Spinner
+import android.widget.TextView
+import androidx.core.widget.doOnTextChanged
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 
@@ -16,6 +19,14 @@ fun listenClicks(spinner: Spinner, theCurrency: MutableLiveData<String>) {
             theCurrency.value = ( parent!!.getItemAtPosition(position) as String)
         }
     }
+}
+
+
+@BindingAdapter("changeText")
+fun onChange(view: EditText , changeText: MutableLiveData<String> ){
+     view.doOnTextChanged { text, start, before, count ->
+         changeText.value = ""
+     }
 }
 
 
