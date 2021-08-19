@@ -1,6 +1,5 @@
 package com.example.currency_converter_hw.data.database
 
-import android.util.Log
 import com.example.currency_converter_hw.data.IData
 import com.example.currency_converter_hw.data.Status
 import com.example.currency_converter_hw.data.database.model.Currency
@@ -27,7 +26,7 @@ class Database : IData {
                delay(600)
                Status.Success(result)
         } catch (e:Exception) {
-               Status.Error("Error!")
+               Status.Error("There is no amount!")
         }
 
 }

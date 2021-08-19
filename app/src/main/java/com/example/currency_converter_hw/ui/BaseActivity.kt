@@ -2,15 +2,12 @@ package com.example.currency_converter_hw.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import androidx.annotation.LayoutRes
 import com.example.currency_converter_hw.viewModel.IViewModel
-import com.example.currency_converter_hw.viewModel.MainViewModel
+
 
 abstract class BaseActivity<VB : ViewBinding , VM : IViewModel > : AppCompatActivity() {
 
