@@ -5,9 +5,6 @@
 
     <data>
         <variable
-            name="view"
-            type="android.widget.TextView" />
-        <variable
             name="viewModel"
             type="com.example.currency_converter_hw.viewModel.MainViewModel" />
     </data>
