@@ -12,14 +12,15 @@ class CurrencyConverterRespository : IRespository {
 
     private val fakeDatabase:IData = Database()
 
-    override fun convertedCurrency(fromCurrency: String, toCurrency: String, amount: Double?) =
+    override fun convertedCurrency(fromCurrency: String, toCurrency: String, amount: Double?): Flow<Any> =
         flow {
-               emit(Status.Loading)
+               emit(getCheckStatus(Status.Loading))
                val statusCurrency = fakeDatabase
                         .getConverterCurrency(fromCurrency, toCurrency, amount)
-               emit(statusCurrency)
+               emit(getCheckStatus(statusCurrency))
         }
             .onCompletion { Log.i(TAG , "Done convertedCurrency()") }
             .flowOn(Dispatchers.IO)
+
 
 }

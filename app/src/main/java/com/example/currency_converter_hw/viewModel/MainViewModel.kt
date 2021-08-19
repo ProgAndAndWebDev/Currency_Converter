@@ -32,7 +32,7 @@ class MainViewModel : ViewModel() , IViewModel{
             repository.convertedCurrency( fromCurrency.value!!
                 , toCurrency.value!!, currentCurrency.value?.toDoubleOrNull())
                 .catch { e -> Log.i(TAG, "${e.message}") }
-                .collect { _convertCurrency.postValue(getCheckStatus(it)) }
+                .collect { _convertCurrency.postValue(it.toString()) }
         }
 
 }
