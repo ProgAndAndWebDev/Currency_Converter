@@ -35,7 +35,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     fun switchSpinners(from: Spinner , to: Spinner) {
         val switch = to.selectedItemPosition
-            to.setSelection(from.selectedItemPosition).also {  from.setSelection(switch) }
+        to.setSelection(from.selectedItemPosition)
+        from.setSelection(switch)
     }
 
 }
