@@ -22,10 +22,5 @@ class CurrencyConverterRespository : IRespository {
             .onCompletion { Log.i(TAG , "Done convertedCurrency()") }
             .flowOn(Dispatchers.IO)
 
-    fun getCheckStatus(status: Status<String>): String =
-         when (status) {
-            is Status.Error -> status.message
-            is Status.Loading -> "Loading..."
-            is Status.Success -> status.data
-        }
+
 }
